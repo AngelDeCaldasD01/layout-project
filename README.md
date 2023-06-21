@@ -32,7 +32,7 @@ En cuanto el funcionamiento del componente Layout, solo hay una única prop obli
 | columnConfig | { position: number, col: { start: number, end: number } } | Es la configuración de columnas en un objeto. |
 | rowSpacing | string | Esta propiedad es el gap entre columnas y filas |
 
-#### Componente:
+#### TextField:
 | Propiedad| Valores| Explicación |
 | ----- | ---- |---- |
 | className* | string | Su valor tiene que ser 'MuiFormControl-root' para que funcione|
