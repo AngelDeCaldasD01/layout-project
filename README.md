@@ -4,7 +4,7 @@
 Para poder iniciar el proyecto se tienen que seguir los siguientes pasos:
 
 ```bash
-  git clone 
+  git clone https://github.com/AngelDeCaldasD01/layout-project.git
 ```
 
 ```bash
@@ -12,7 +12,7 @@ Para poder iniciar el proyecto se tienen que seguir los siguientes pasos:
 ```
 
 ```bash
-  git clone https://github.com/AngelDeCaldasD01/layout-project.git
+  npm start
 ```
 ### Consejos
 
