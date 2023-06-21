@@ -35,7 +35,6 @@ En cuanto el funcionamiento del componente Layout, solo hay una única prop obli
 #### TextField:
 | Propiedad| Valores| Explicación |
 | ----- | ---- |---- |
-| className* | string | Su valor tiene que ser 'MuiFormControl-root' para que funcione|
 | col | string \| { start: number, end: number }| Número o string de donde empieza y termina una columna |
 
 _*El asterisco hace referencia a una propiedad obligatoria_
