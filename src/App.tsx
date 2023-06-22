@@ -14,26 +14,17 @@ function App() {
   return (
     <div className="App">
       <h1>Layout 1</h1>
-      <LayoutCustom display="grid" rowSpacing={"12px"} maxColumns={4}>
-        <TextField label='Prueba 1' name={''} col={" 1 / 3"}/>
-        <TextField label='Prueba 2' name={''}/>
-        <TextField label='Prueba 3' name={''} col={{start: 1, end: 4}}/>
-        <TextField label='Prueba 4' name={''}/>
-        <TextField label='Prueba 5' name={''}/>
-        <TextField label='Prueba 6' name={''}/>
-        <TextField label='Prueba 7' name={''}/>
-        <TextField label='Prueba 8' name={''}/>
-      </LayoutCustom>
-      <h1>Layout 2</h1>
-      <LayoutCustom display="grid" rowSpacing={"12px"} maxColumns={5} columnConfig={columnConfig1}>
+      <LayoutCustom display="grid" rowSpacing={"12px"} maxColumns={8}>
         <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 2</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 3</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 4</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 5</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 6</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 7</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 8</DivStyled>
+        <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
+        <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
+        <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
+        <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
+        <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
+        <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
+        <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
+        <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
+        <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
       </LayoutCustom>
     </div>
   );
