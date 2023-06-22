@@ -63,14 +63,19 @@ export const LayoutCustom = styled.div<ILayout>`
   }
 `;
 
-export const DivStyled = styled.div<ITextField>`
+interface IDivStyled {
+  className: 'MuiFormControl-root';
+  col?: IColumn | string;
+}
+
+export const DivStyled = styled.div<IDivStyled>`
   width: 100%;
   height: 55px;
   background-color: #c1e6dd;
   border-radius: 10px;
   place-content: center;
-  margin-bottom: 1px;
   font-weight: 500;
   color: black;
+  grid-column: ${(props) => typeof props.col == 'string' ? props.col : props.col ? `${props.col?.start} / ${props.col?.end}` : "inherit"}
 `;
 
