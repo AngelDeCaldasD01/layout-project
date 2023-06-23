@@ -69,9 +69,6 @@ function App() {
       if (i % 4 === 0) col = {start: 2, end: 3};
       columnsConfig.push({ position: i+1, col: { start: col.start, end: col.end } });
     }
-
-
-
     col = {start: col.start+2, end: col.end+2};
   }
 
