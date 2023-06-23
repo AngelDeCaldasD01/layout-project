@@ -1,3 +1,4 @@
+import { TextField } from 'decal-components';
 import './App.css';
 import { DivStyled, LayoutCustom } from './layout.styled';
 
@@ -57,11 +58,30 @@ function App() {
   //   });
   // }
 
+  const columnsConfig = [];
+  let col = {start: 1, end: 2};
+
+  for (let i = 0; i < 32; i++) {
+    if (i % 8 >= 0 && i % 8 <= 3) {
+      if (i % 4 === 0) col = {start: 1, end: 2};
+      columnsConfig.push({ position: i+1, col: { start: col.start, end: col.end } });
+    } else if (i % 8 >= 4 &&  i % 8 <= 7) {
+      if (i % 4 === 0) col = {start: 2, end: 3};
+      columnsConfig.push({ position: i+1, col: { start: col.start, end: col.end } });
+    }
+
+
+
+    col = {start: col.start+2, end: col.end+2};
+  }
+
   const divs = Array.from({ length: 32 }, (_, index) => (
     <DivStyled key={index} className='MuiFormControl-root'>
       Prueba {index + 1}
     </DivStyled>
   ));
+
+  console.log(columnsConfig)
 
   return (
     <div className="App">
@@ -74,12 +94,44 @@ function App() {
         <DivStyled className='MuiFormControl-root' col={{start: 2, end: 4}}>Prueba 5</DivStyled>
         <DivStyled className='MuiFormControl-root' col={{start: 1, end: 3}}>Prueba 6</DivStyled>
         <DivStyled className='MuiFormControl-root' col={{start: 4, end: 6}}>Prueba 7</DivStyled>
-        <DivStyled className='MuiFormControl-root'col={{start: 1, end: 6}}>Prueba 8</DivStyled>
+        <DivStyled className='MuiFormControl-root' col={{start: 1, end: 6}}>Prueba 8</DivStyled>
         <DivStyled className='MuiFormControl-root'>Prueba 9</DivStyled>
-        <DivStyled className='MuiFormControl-root'>Prueba 10</DivStyled>
+        <DivStyled className='MuiFormControl-root' col={{start: 2, end: 6}}>Prueba 10</DivStyled>
       </LayoutCustom>
+      <h1>Layout 2</h1>
+      <LayoutCustom display="grid" rowSpacing={"24px"} maxColumns={3}>
+        <LayoutCustom display="grid" rowSpacing={"24px"} maxColumns={1} col={"1 / 3"}>
+          <TextField name={''} label="Prueba 1"/>
+          <TextField name={''} label="Prueba 2"/>
+          <div>Columna 1</div>
+          <LayoutCustom display="grid" rowSpacing={"16px"} maxColumns={2} >
+            <TextField name={''} label="Prueba 1" col={"1 / 2"}/>
+            <TextField name={''} label="Prueba 2" col={"2 / 3"}/>
+            <TextField name={''} label="Prueba 3" col={"1 / 2"}/>
+            <TextField name={''} label="Prueba 4" col={"2 / 3"}/>
+          </LayoutCustom>
+          <div>Columna 2</div>
+          <LayoutCustom display="grid" rowSpacing={"16px"} maxColumns={3}>
+            <TextField name={''} label="Prueba 1" col={"1 / 2"}/>
+            <TextField name={''} label="Prueba 2" col={"2 / 3"}/>
+            <TextField name={''} label="Prueba 3" col={"3 / 4"}/>
+            <TextField name={''} label="Prueba 4" col={"1 / 4"}/>
+          </LayoutCustom>
+        </LayoutCustom>
+        <LayoutCustom display="grid" rowSpacing={"16px"} maxColumns={1} >
+            <TextField name={''} label="Prueba 1"/>
+            <TextField name={''} label="Prueba 2"/>
+            <TextField name={''} label="Prueba 3"/>
+            <TextField name={''} label="Prueba 4"/>
+            <TextField name={''} label="Prueba 1"/>
+            <TextField name={''} label="Prueba 2"/>
+            <TextField name={''} label="Prueba 3"/>
+            <TextField name={''} label="Prueba 4"/>
+          </LayoutCustom>
+      </LayoutCustom>
+      
       <h1>Layout 3</h1>
-      <LayoutCustom display="grid" rowSpacing={"0px"} maxColumns={8} columnConfig={columnConfig1}>
+      <LayoutCustom display="grid" rowSpacing={"0px"} maxColumns={8} columnConfig={columnsConfig}>
         {divs}
       </LayoutCustom>
     </div>

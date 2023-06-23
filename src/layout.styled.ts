@@ -18,6 +18,7 @@ interface ILayout {
   maxColumns?: number;
   columnConfig?: IColumnConfig[];
   rowSpacing: string;
+  col?: IColumn | string;
 }
 
 const createGridStyles = (rowSpacing: string) => `
@@ -57,7 +58,10 @@ export const LayoutCustom = styled.div<ILayout>`
     props.columnConfig.map(({ position, col }) =>
       gridTemplateStyles3(position, typeof col == 'string' ? col : `${col.start} / ${col.end}`)
     )}
-
+  grid-column: ${(props) => typeof props.col == 'string' ? props.col : props.col ? `${props.col?.start} / ${props.col?.end}` : "inherit"};
+  @media (max-width: 768px) {
+    grid-column: inherit;
+  }
   .marginTop {
     place-self: end;
   }
@@ -76,6 +80,9 @@ export const DivStyled = styled.div<IDivStyled>`
   place-content: center;
   font-weight: 500;
   color: black;
-  grid-column: ${(props) => typeof props.col == 'string' ? props.col : props.col ? `${props.col?.start} / ${props.col?.end}` : "inherit"}
+  grid-column: ${(props) => typeof props.col == 'string' ? props.col : props.col ? `${props.col?.start} / ${props.col?.end}` : "inherit"};
+  @media (max-width: 768px) {
+    grid-column: inherit;
+  }
 `;
 
