@@ -84,5 +84,9 @@ export const DivStyled = styled.div<IDivStyled>`
   @media (max-width: 768px) {
     grid-column: inherit;
   }
+<<<<<<< HEAD
 `;
 
+=======
+`;
+>>>>>>> 19354f70f14398c6821a468482ed84bbfc4a0eb1
