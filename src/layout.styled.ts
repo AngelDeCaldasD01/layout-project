@@ -18,6 +18,7 @@ interface ILayout {
   maxColumns?: number;
   columnConfig?: IColumnConfig[];
   rowSpacing: string;
+  col?: IColumn | string;
 }
 
 const createGridStyles = (rowSpacing: string) => `
@@ -57,20 +58,30 @@ export const LayoutCustom = styled.div<ILayout>`
     props.columnConfig.map(({ position, col }) =>
       gridTemplateStyles3(position, typeof col == 'string' ? col : `${col.start} / ${col.end}`)
     )}
-
+  grid-column: ${(props) => typeof props.col == 'string' ? props.col : props.col ? `${props.col?.start} / ${props.col?.end}` : "inherit"};
+  @media (max-width: 768px) {
+    grid-column: inherit;
+  }
   .marginTop {
     place-self: end;
   }
 `;
 
-export const DivStyled = styled.div<ITextField>`
+interface IDivStyled {
+  className: 'MuiFormControl-root';
+  col?: IColumn | string;
+}
+
+export const DivStyled = styled.div<IDivStyled>`
   width: 100%;
   height: 55px;
   background-color: #c1e6dd;
   border-radius: 10px;
   place-content: center;
-  margin-bottom: 1px;
   font-weight: 500;
   color: black;
+  grid-column: ${(props) => typeof props.col == 'string' ? props.col : props.col ? `${props.col?.start} / ${props.col?.end}` : "inherit"};
+  @media (max-width: 768px) {
+    grid-column: inherit;
+  }
 `;
-

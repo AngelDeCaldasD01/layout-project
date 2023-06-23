@@ -25,15 +25,15 @@ function App() {
         <TextField label='Prueba 8' name={''}/>
       </LayoutCustom>
       <h1>Layout 2</h1>
-      <LayoutCustom display="grid" rowSpacing={"12px"} maxColumns={5} columnConfig={columnConfig1}>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 1</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 2</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 3</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 4</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 5</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 6</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 7</DivStyled>
-        <DivStyled className='MuiFormControl-root' name={''}>Prueba 8</DivStyled>
+      <LayoutCustom display="grid" rowSpacing={"12px"} maxColumns={5}>
+        <DivStyled className='MuiFormControl-root' col={" 1 / 3"}>Prueba 1</DivStyled>
+        <DivStyled className='MuiFormControl-root'>Prueba 2</DivStyled>
+        <DivStyled className='MuiFormControl-root'>Prueba 3</DivStyled>
+        <DivStyled className='MuiFormControl-root'>Prueba 4</DivStyled>
+        <DivStyled className='MuiFormControl-root'>Prueba 5</DivStyled>
+        <DivStyled className='MuiFormControl-root'>Prueba 6</DivStyled>
+        <DivStyled className='MuiFormControl-root'>Prueba 7</DivStyled>
+        <DivStyled className='MuiFormControl-root'>Prueba 8</DivStyled>
       </LayoutCustom>
     </div>
   );
